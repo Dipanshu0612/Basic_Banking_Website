@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.nav a.active{
+  color: rgb(131, 134, 131);
+  transition: .2s ease-in-out;
+  border-bottom: 4px solid rgb(6, 136, 249);
+  padding: 1.35rem 0;
+}
+a{
+  text-decoration: none!important;
+}
+ul,p{
+  margin-bottom: 0!important;
+}
+
+#menuicon{
+  display: none;
+}
+@media screen and (min-width:801px) {
+    #nav{
+      display: block!important;
+    }
+}
+
+@media screen and (max-width:800px) {
+  #menuicon{
+    display: block;
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: whitesmoke;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #nav{
+    position: fixed;
+    top:4rem ;
+    right:0rem;
+    height: 15rem;
+    background-color:  rgb(17 24 39 / var(--tw-bg-opacity));
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .nav ul{
+    flex-direction: column;
   }
+  .nav li{
+    margin: auto auto;
+    text-align: center;
+  }
+  .nav a.active{
+    padding: .5rem 0;
+  }
+  
+}
+#transactionslogo{
+  margin-right: 1rem;
 }

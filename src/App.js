@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./Pages/Home";
+import AboutUs from "./Pages/AboutUs";
+import Customers from "./Pages/Customers";
+import TransactionsData from "./Pages/Transactions";
+import { useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/customer-list" element={<Customers />} />
+        <Route path="/transaction-history" element={<TransactionsData />} />
+      </Routes>
+      <Footer />
+    </Router>
+    </>
   );
 }
 
