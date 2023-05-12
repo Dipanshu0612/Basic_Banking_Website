@@ -18,7 +18,7 @@ export default function TransactionsData() {
     }
 
     getCustomers();
-  }, [])
+  })
   return (
     <>
       <div>

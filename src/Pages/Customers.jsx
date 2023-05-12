@@ -167,7 +167,7 @@ export default function Customers(props) {
         }
 
         getCustomers();
-    }, [])
+    })
 
     return (
         <>
