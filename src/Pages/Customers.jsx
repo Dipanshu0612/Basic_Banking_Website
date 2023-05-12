@@ -19,18 +19,18 @@ export default function Customers(props) {
     })
     let [formData2, setFormData2] = useState({
         sender2: "",
-        reciever2:"",
+        reciever2: "",
         amount2: 0
     })
     let { sender1, amount1 } = formData;
-    let { sender2,reciever2,amount2 } = formData2;
+    let { sender2, reciever2, amount2 } = formData2;
     const [modalShow, setModalShow] = useState(false);
     const [custdata, setcustdata] = useState([])
     const custdbref = collection(db, 'Customers_Data')
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    let transaction_ref=collection(db,"Transaction_Details");
+    let transaction_ref = collection(db, "Transaction_Details");
     const [secondmodal, setsecondShow] = useState(false);
     const secondhandleClose = () => setsecondShow(false);
     const secondhandleShow = () => setsecondShow(true);
@@ -48,7 +48,7 @@ export default function Customers(props) {
         }));
     }
 
-    
+
     const [viewdata, setviewdata] = useState({
         name: "",
         email: "",
@@ -56,10 +56,10 @@ export default function Customers(props) {
         balance: "",
         accid: ""
     })
-    
+
     let { name, mobno, email, balance, accid } = viewdata;
     let reciever1 = email;
-    
+
     async function printName(id) {
         const docRef = doc(db, "Customers_Data", id);
         const snapshot = await getDoc(docRef);
@@ -71,42 +71,42 @@ export default function Customers(props) {
             accid: id
         });
     }
-    
-    
+
+
     async function onSubmit(e) {
         try {
-            let sendid,recid,sendbalance,recbalance,sendname,recname;
-            custdata.forEach((data)=>{
+            let sendid, recid, sendbalance, recbalance, sendname, recname;
+            custdata.forEach((data) => {
                 // console.log(data);
-                if (data.Email === sender1){
-                    sendid=data.id;
-                    sendbalance=data.Balance;
-                    sendname=data.Name;
+                if (data.Email === sender1) {
+                    sendid = data.id;
+                    sendbalance = data.Balance;
+                    sendname = data.Name;
                 }
-                if (data.Email === reciever1){
-                    recid=data.id;
-                    recbalance=data.Balance;
-                    recname=data.Name;
+                if (data.Email === reciever1) {
+                    recid = data.id;
+                    recbalance = data.Balance;
+                    recname = data.Name;
                 }
-                console.log(sendid,sendbalance,recid,recbalance," ",amount1);
+                console.log(sendid, sendbalance, recid, recbalance, " ", amount1);
 
             })
-            if (sendbalance < amount1){
+            if (sendbalance < amount1) {
                 toast.error("Sender's account has insufficient Balance!")
             }
-            if (recid===undefined || sendid===undefined){
+            if (recid === undefined || sendid === undefined) {
                 toast.error("Sender or Receiver's Email does not exist! Try Again!")
             }
-            else{
-                let sendref=doc(db,'Customers_Data',sendid);
-                let recref=doc(db,'Customers_Data',recid);
-                await updateDoc(sendref,{Balance : Number(sendbalance) - Number(amount1)})
-                await updateDoc(recref,{Balance : Number(recbalance) + Number(amount1)})
+            else {
+                let sendref = doc(db, 'Customers_Data', sendid);
+                let recref = doc(db, 'Customers_Data', recid);
+                await updateDoc(sendref, { Balance: Number(sendbalance) - Number(amount1) })
+                await updateDoc(recref, { Balance: Number(recbalance) + Number(amount1) })
                 toast.success("Your Transaction was Succesful!!")
-                await addDoc(transaction_ref,{
-                    Sender:sendname,
-                    Reciever:recname,
-                    Amount:amount1
+                await addDoc(transaction_ref, {
+                    Sender: sendname,
+                    Reciever: recname,
+                    Amount: amount1
                 })
             }
         } catch (error) {
@@ -117,38 +117,38 @@ export default function Customers(props) {
     }
     async function onSubmit2(e) {
         try {
-            let sendid,recid,sendbalance,recbalance,sendname,recname;
-            custdata.forEach((data)=>{
+            let sendid, recid, sendbalance, recbalance, sendname, recname;
+            custdata.forEach((data) => {
                 // console.log(data);
-                if (data.Email === sender2){
-                    sendid=data.id;
-                    sendbalance=data.Balance;
-                    sendname=data.Name;
+                if (data.Email === sender2) {
+                    sendid = data.id;
+                    sendbalance = data.Balance;
+                    sendname = data.Name;
                 }
-                if (data.Email === reciever2){
-                    recid=data.id;
-                    recbalance=data.Balance;
-                    recname=data.Name;
+                if (data.Email === reciever2) {
+                    recid = data.id;
+                    recbalance = data.Balance;
+                    recname = data.Name;
                 }
-                console.log(sendid,sendbalance,recid,recbalance);
+                console.log(sendid, sendbalance, recid, recbalance);
 
             })
-            if (sendbalance < amount2){
+            if (sendbalance < amount2) {
                 toast.error("Sender's account has insufficient Balance!")
             }
-            if (recid===undefined || sendid===undefined){
+            if (recid === undefined || sendid === undefined) {
                 toast.error("Sender or Receiver's Email does not exist! Try Again!")
             }
-            else{
-                let sendref=doc(db,'Customers_Data',sendid);
-                let recref=doc(db,'Customers_Data',recid);
-                await updateDoc(sendref,{Balance : Number(sendbalance) - Number(amount2)})
-                await updateDoc(recref,{Balance : Number(recbalance) + Number(amount2)})
+            else {
+                let sendref = doc(db, 'Customers_Data', sendid);
+                let recref = doc(db, 'Customers_Data', recid);
+                await updateDoc(sendref, { Balance: Number(sendbalance) - Number(amount2) })
+                await updateDoc(recref, { Balance: Number(recbalance) + Number(amount2) })
                 toast.success("Your Transaction was Succesful!!")
-                await addDoc(transaction_ref,{
-                    Sender:sendname,
-                    Reciever:recname,
-                    Amount:amount2
+                await addDoc(transaction_ref, {
+                    Sender: sendname,
+                    Reciever: recname,
+                    Amount: amount2
                 })
 
             }
@@ -274,7 +274,7 @@ export default function Customers(props) {
                                     type="email"
                                     placeholder="name@example.com"
                                     onChange={onChanged2}
-                                    
+
                                 />
                             </Form.Group>
                             <Form.Group

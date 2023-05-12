@@ -51,7 +51,7 @@ export default function TransactionsData() {
         </Table>
 
         <div className='flex justify-center items-center flex-wrap space-x-5 my-2 mb-5 text-black sm:flex-col'>
-        <button className='bg-blue-500 px-3 py-2 flex rounded justify-center items-center space-x-1 font-medium hover:border border-black ease-in-out duration-200 hover:text-black'><Link to="/customer-list" className="hover:text-black"> <AiOutlineLeft className='text-xl rounded inline-flex' id='transactionslogo' />Back to Customers List</Link></button>
+          <button className='bg-blue-500 px-3 py-2 flex rounded justify-center items-center space-x-1 font-medium hover:border border-black ease-in-out duration-200 hover:text-black'><Link to="/customer-list" className="hover:text-black"> <AiOutlineLeft className='text-xl rounded inline-flex' id='transactionslogo' />Back to Customers List</Link></button>
         </div>
 
       </div>
