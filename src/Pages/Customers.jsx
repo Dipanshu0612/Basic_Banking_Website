@@ -94,7 +94,7 @@ export default function Customers(props) {
             if (sendbalance < amount1){
                 toast.error("Sender's account has insufficient Balance!")
             }
-            if (recid==undefined || sendid==undefined){
+            if (recid===undefined || sendid===undefined){
                 toast.error("Sender or Receiver's Email does not exist! Try Again!")
             }
             else{
@@ -136,7 +136,7 @@ export default function Customers(props) {
             if (sendbalance < amount2){
                 toast.error("Sender's account has insufficient Balance!")
             }
-            if (recid==undefined || sendid==undefined){
+            if (recid===undefined || sendid===undefined){
                 toast.error("Sender or Receiver's Email does not exist! Try Again!")
             }
             else{

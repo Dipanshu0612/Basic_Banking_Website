@@ -14,7 +14,7 @@ export default function AboutUs() {
       <div className='flex justify-around items-center my-3 bg-slate-100 flex-wrap'>
 
         <div className='w-[40rem] md:w-[30rem] sm:w-[25rem]'>
-          <img src="../assests/About-Page.jpeg" alt="About-page Image" className='px-3 py-3 mix-blend-multiply' />
+          <img src="../assests/About-Page.jpeg" alt="About-page" className='px-3 py-3 mix-blend-multiply' />
         </div>
 
         <div className='w-[40rem] md:w-[30rem] sm:w-[25rem]'>
