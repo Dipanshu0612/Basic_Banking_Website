@@ -337,7 +337,7 @@ export default function Customers(props) {
 
                 </div>
 
-                <div className='flex justify-center items-center flex-wrap space-x-5 my-2 mb-5 text-black sm:flex-col'>
+                <div className='flex justify-center items-center flex-wrap space-x-5 my-2 mb-5 text-black sm:flex-col sm:space-y-4'>
 
                     <button className='bg-green-500 px-3 py-2 flex rounded justify-center items-center space-x-1 font-medium hover:border border-black ease-in-out duration-200' onClick={secondhandleShow}><FcMoneyTransfer className='text-xl' id='transactionslogo' />Send Money</button>
 
