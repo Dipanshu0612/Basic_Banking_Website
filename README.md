@@ -1,3 +1,34 @@
+# Payment Gateway Integration Project.
+## The Sparks Foundation
+This was a task provided to me as a Web Development Intern.
+
+### About the Project
+
+This is a simple banking website that allows users to view and do transactions between them.\
+You can see details of a particular user by clicking on that user's row.\
+The details contain their Account ID, Email, Phone Number and Balance.\
+This is build using React JS, Tailwind CSS and Bootstrap.\
+For the backend, the database is provided by Firebase Firestore.\
+
+### More Details
+
+This is a responsive website. You can run it and view it on any device. 
+
+#### Transaction Process
+There are two ways you can do transaction on this system.\
+Firstly you can click on one particular user and a option will appear to send money to him. The email address of that user will be filled automatically and you just have to enter the Sender's Email and Amount to do the transaction.\
+The second way is the button below the table of the customers. Here you will have to enter both the Sender's and Receiver's Mail Address to do the transaction.
+### Updation on the Database.
+Once you make any transction, the data is sent to the Database on Firebase Firestore.\
+The data is upadated if the details are correct otherwise you recieve a message saying "There was some Error".\
+You will need to refresh the page to see the changes on the page.
+
+### Important!
+
+This project has been deployed on Netlify.\
+For demo:- https://payment-gateway-dipanshu.netlify.app/  
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
