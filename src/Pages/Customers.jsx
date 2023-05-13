@@ -26,7 +26,6 @@ export default function Customers(props) {
     let { sender2, reciever2, amount2 } = formData2;
     const [modalShow, setModalShow] = useState(false);
     const [custdata, setcustdata] = useState([])
-    const custdbref = collection(db, 'Customers_Data')
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -161,7 +160,9 @@ export default function Customers(props) {
     }
 
     useEffect(() => {
-        let getCustomers = async () => {
+    const custdbref = collection(db, 'Customers_Data')
+
+        let getCustomers = async () => {    
             let data = await getDocs(custdbref);
             setcustdata(data.docs.map((doc => ({ ...doc.data(), id: doc.id }))))
         }

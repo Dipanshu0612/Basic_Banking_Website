@@ -9,9 +9,9 @@ import { NavLink as Link } from 'react-router-dom';
 
 export default function TransactionsData() {
   const [transaction_data, settransactiontdata] = useState([])
-  const transactiondbref = collection(db, 'Transaction_Details')
-
+  
   useEffect(() => {
+    const transactiondbref = collection(db, 'Transaction_Details')
     let getCustomers = async () => {
       let data = await getDocs(transactiondbref);
       settransactiontdata(data.docs.map((doc => ({ ...doc.data(), id: doc.id }))))
