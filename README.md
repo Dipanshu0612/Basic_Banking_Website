@@ -10,6 +10,10 @@ The details contain their Account ID, Email, Phone Number and Balance.\
 This is build using React JS, Tailwind CSS and Bootstrap.\
 For the backend, the database is provided by Firebase Firestore.\
 
+### Image Preview - 1
+![image](https://github.com/Dipanshu0612/Basic_Banking_Website/assets/97778136/da4b41f7-10ed-44ec-877f-935d92d1edc9)
+
+
 ### More Details
 
 This is a responsive website. You can run it and view it on any device. 
@@ -22,6 +26,10 @@ The second way is the button below the table of the customers. Here you will hav
 Once you make any transction, the data is sent to the Database on Firebase Firestore.\
 The data is upadated if the details are correct otherwise you recieve a message saying "There was some Error".\
 You will need to refresh the page to see the changes on the page.
+
+### Image Preview - 2
+![image](https://github.com/Dipanshu0612/Basic_Banking_Website/assets/97778136/d25970c5-f4eb-460c-ab0d-f295b581f2ab)
+
 
 ### Important!
 
